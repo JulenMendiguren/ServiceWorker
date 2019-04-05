@@ -105,6 +105,7 @@ function drawPiece(p, color, selected) {
 }
 
 function guardarPosiciones() {
+    console.log("Guardando posiciones...")
     for (var i = 0; i < piezas.length; i++) {
         localStorage.setItem("pieza" + i + ".fila", piezas[i].row);
         localStorage.setItem("pieza" + i + ".columna", piezas[i].column);
@@ -113,6 +114,7 @@ function guardarPosiciones() {
 }
 
 function cargarPosiciones() {
+    console.log("Cargando posiciones...")
     piezas = [];
     for (var i = 0; i < localStorage.length / 3; i++) {
         var row = parseInt(localStorage.getItem("pieza" + i + ".fila"));
