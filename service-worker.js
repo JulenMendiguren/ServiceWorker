@@ -31,6 +31,7 @@ this.addEventListener('fetch', event => {
     // request.mode = navigate isn't supported in all browsers
     // so include a check for Accept: text/html header.
     event.preventDefault()
+    event.stopPropagation()
     if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
         event.respondWith(
             fetch(createCacheBustedRequest(event.request.url)).catch(error => {
