@@ -125,6 +125,11 @@ function cargarPosiciones() {
     if (piezas.length === 0) {
         return false;
     }
+    gNumPieces = piezas.length;
+    gSelectedPieceIndex = -1;
+    gSelectedPieceHasMoved = false;
+    gMoveCount = 0;
+    gGameInProgress = true;
     drawBoard();
     return true;
 }
