@@ -40,7 +40,9 @@ this.addEventListener('fetch', event => {
     }
     else {
         // Respond with everything else if we can
-        event.respondWith(caches.match(event.request)
+        event.respondWith(caches.match(event.request).catch(error => {
+            console.log("error fetching")
+        })
             .then(function (response) {
                 return response || fetch(event.request).catch(error => {
                     console.log("error fetching")
