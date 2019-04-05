@@ -202,6 +202,7 @@ function clickOnEmptyCell(cell) {
 }
 
 function gestorClick(e) {
+    guardarPosiciones();
     var casilla = getCursorPosition(e);
     for (var i = 0; i < gNumPieces; i++) {
         if ((piezas[i].row == casilla.row) &&
@@ -230,5 +231,5 @@ function iniciarJuego(canvasElement, moveCountElement) {
     gMoveCountElem = moveCountElement;
     gDrawingContext = gCanvasElement.getContext("2d");
 
-    if (!cargarPosiciones) newGame();
+    if (!cargarPosiciones()) newGame();
 }

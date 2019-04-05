@@ -13,9 +13,7 @@
     <p id="movimientos">Movimientos: <span id="count">0</span></p>
     <canvas id="lienzo" width="600" height="300"></canvas>
     <script>
-        let lienzo = document.getElementById('lienzo');
-        iniciarJuego(lienzo, document.getElementById('count'));
-        lienzo.addEventListener('click', guardarPosiciones());
+        iniciarJuego(document.getElementById('lienzo'), document.getElementById('count'));
     </script>
 </body>
 
