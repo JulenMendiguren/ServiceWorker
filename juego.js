@@ -135,6 +135,7 @@ function cargarPosiciones() {
 }
 
 function newGame() {
+    console.log("New game")
     for (var i = 0; i < kFilasIniciales; i++) {
         for (var j = (i + 1) % 2; j < kBoardHeight; j = j + 2) {
             piezas.push(new Casilla(i, j, kNegras));
@@ -229,6 +230,7 @@ function clickOnPiece(indicePieza) {
 }
 
 function iniciarJuego(canvasElement, moveCountElement) {
+    console.log("Iniciar juego")
     gCanvasElement = canvasElement;
     gCanvasElement.width = kPixelWidth;
     gCanvasElement.height = kPixelHeight;
