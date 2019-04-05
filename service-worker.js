@@ -46,4 +46,6 @@ this.addEventListener('fetch', event => {
             })
         );
     }
+}).catch(error => {
+    console.log("error fetching")
 });
