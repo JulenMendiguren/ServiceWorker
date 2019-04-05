@@ -120,7 +120,11 @@ function cargarPosiciones() {
         var color = localStorage.getItem("pieza" + i + ".color");
         piezas.push(new Casilla(row, column, color));
     }
+    if (piezas.length === 0) {
+        return false;
+    }
     drawBoard();
+    return true;
 }
 
 function newGame() {
@@ -223,5 +227,6 @@ function iniciarJuego(canvasElement, moveCountElement) {
     gCanvasElement.addEventListener("click", gestorClick, false);
     gMoveCountElem = moveCountElement;
     gDrawingContext = gCanvasElement.getContext("2d");
-    newGame();
+
+    if (!cargarPosiciones) newGame();
 }
